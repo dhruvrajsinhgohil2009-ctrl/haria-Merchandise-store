@@ -1,0 +1,2045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shri L. G. Haria School, Jamnagar - Mega AI Merchandise Store</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              navy: '#0f172a',
+              blue: '#1e3a8a',
+              amber: '#f59e0b',
+              emerald: '#059669',
+              lightGreen: '#10b981',
+              darkGreen: '#002E25',
+              shopifyGreen: '#008060',
+              flipkartBlue: '#2874f0',
+              amazonOrange: '#ff9900',
+              amazonDark: '#131921',
+              amazonLight: '#232f3e'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f1f3f6;
+      color: #1f2937;
+      -webkit-font-smoothing: antialiased;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      height: 6px;
+      width: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+    .drawer-open {
+      transform: translateX(0%);
+    }
+    .drawer-closed {
+      transform: translateX(100%);
+    }
+    .badge-flipkart {
+      background: linear-gradient(135deg, #2874f0 0%, #004dc8 100%);
+    }
+    .badge-assured {
+      background: #002E25;
+      color: #34d399;
+    }
+    .glow-amber {
+      box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
+    }
+    .modal-enter {
+      animation: modalFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: scale(0.96); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-brand-flipkartBlue selection:text-white pb-12">
+
+  <div class="bg-brand-amazonDark text-gray-200 text-xs py-1.5 px-3 sm:px-6 border-b border-gray-800">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <!-- Location Selector -->
+      <div class="flex items-center gap-1.5 cursor-pointer hover:text-white transition-colors" onclick="promptPincodeCheck()">
+        <svg class="w-4 h-4 text-brand-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        <span>Deliver to <strong class="text-white" id="currentDeliveryPin">Jamnagar 361001</strong></span>
+        <span class="text-gray-400 text-[10px] underline ml-1">Change</span>
+      </div>
+
+      <!-- Live Deals Countdown -->
+      <div class="flex items-center gap-2 font-medium">
+        <span class="inline-block w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+        <span class="text-red-400 font-bold uppercase tracking-wider text-[11px]">Flash Deals End In:</span>
+        <div class="flex items-center gap-1 font-mono font-bold text-white bg-black/40 px-2 py-0.5 rounded text-[11px]">
+          <span id="countdownHours">02</span>h :
+          <span id="countdownMins">44</span>m :
+          <span id="countdownSecs">18</span>s
+        </div>
+      </div>
+
+      <!-- Campus Guarantee Badge -->
+      <div class="hidden lg:flex items-center gap-3 text-gray-300 text-[11px]">
+        <span>🏫 Shri L. G. Haria School Campus Store</span>
+        <span class="text-gray-500">|</span>
+        <span class="text-emerald-400 font-bold">100% Student Verified</span>
+      </div>
+    </div>
+  </div>
+
+  <header class="sticky top-0 z-40 bg-brand-amazonLight text-white shadow-md">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 py-2.5">
+      <div class="flex items-center justify-between gap-3 md:gap-6">
+        
+        <!-- School Branding -->
+        <a href="#" class="flex items-center gap-2.5 shrink-0 group">
+          <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-slate-950 font-black text-xl shadow-md border border-amber-300 transition-transform group-hover:scale-105">
+            H
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5 leading-tight">
+              <span class="font-extrabold text-base md:text-lg tracking-tight text-white">L. G. Haria</span>
+              <span class="text-[10px] bg-brand-flipkartBlue text-white font-black px-1.5 py-0.5 rounded italic">PLUS</span>
+            </div>
+            <p class="text-[10px] text-amber-400 font-medium italic">"Youth Shall Reshape The World"</p>
+          </div>
+        </a>
+
+        <!-- Amazon/Flipkart Style Integrated Search Bar -->
+        <div class="flex-1 max-w-2xl hidden md:flex items-center">
+          <div class="flex w-full rounded-md overflow-hidden bg-white shadow-inner">
+            <select id="headerCategorySelect" onchange="handleHeaderCategoryChange(this.value)" class="bg-gray-100 text-gray-700 text-xs font-semibold px-2 py-2 border-r border-gray-300 focus:outline-none cursor-pointer">
+              <option value="all">All Departments</option>
+              <option value="T-shirts">T-shirts</option>
+              <option value="Hoodies">Hoodies</option>
+              <option value="School bags">School Bags</option>
+              <option value="Caps">Caps</option>
+              <option value="Stationery">Stationery</option>
+              <option value="Water bottles">Water Bottles</option>
+              <option value="ID-card accessories">ID Badges</option>
+            </select>
+            <input 
+              type="text" 
+              id="mainSearchInput" 
+              placeholder="Search in official Haria store: hoodies, bags, bottles, student kits..." 
+              class="w-full px-3 py-2 text-xs md:text-sm text-gray-800 focus:outline-none placeholder:text-gray-400"
+              oninput="handleSearch(this.value)"
+            >
+            <button onclick="triggerVoiceSearch()" class="p-2 text-gray-400 hover:text-gray-700" title="Voice Search">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
+            </button>
+            <button class="bg-brand-amber hover:bg-amber-500 text-gray-950 px-5 flex items-center justify-center transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Header Actions: AI Advisor, Wishlist, Compare, Cart -->
+        <div class="flex items-center gap-2 sm:gap-4">
+          <!-- AI Assistant Trigger -->
+          <button onclick="openAiModal()" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-emerald-500/20 hover:bg-emerald-500/30 border border-emerald-400 text-emerald-300 text-xs font-bold transition-all">
+            <svg class="w-4 h-4 text-emerald-300 animate-spin" style="animation-duration: 6s;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            <span>Haria AI Advisor</span>
+          </button>
+
+          <!-- Wishlist -->
+          <button onclick="openWishlistModal()" class="relative p-2 text-gray-300 hover:text-white transition-colors" title="My Wishlist">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+            <span id="wishlistCount" class="absolute -top-1 -right-1 bg-rose-500 text-white font-black text-[10px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
+          </button>
+
+          <!-- Cart Slide Drawer Trigger -->
+          <button onclick="toggleCartDrawer(true)" class="flex items-center gap-2 p-2 bg-brand-amber hover:bg-amber-500 text-slate-950 font-bold rounded-md px-3.5 py-2 transition-all shadow-sm">
+            <div class="relative">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+              <span id="cartCountBadge" class="absolute -top-2.5 -right-2 bg-red-600 text-white font-black text-[10px] w-4 h-4 rounded-full flex items-center justify-center border-2 border-brand-amber">0</span>
+            </div>
+            <div class="hidden md:flex flex-col text-left leading-none">
+              <span class="text-[10px] text-gray-800 font-semibold">Subtotal</span>
+              <span id="headerCartTotal" class="text-xs font-black">₹0</span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Search Bar -->
+      <div class="mt-2 md:hidden">
+        <div class="flex w-full rounded-md overflow-hidden bg-white shadow-inner">
+          <input 
+            type="text" 
+            placeholder="Search hoodies, caps, bags, bottles..." 
+            class="w-full px-3 py-2 text-xs text-gray-800 focus:outline-none"
+            oninput="handleSearch(this.value)"
+          >
+          <button class="bg-brand-amber px-4 text-gray-900 font-bold flex items-center justify-center">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="bg-white border-b border-gray-200 shadow-xs py-3 px-3 sm:px-6 sticky top-[60px] md:top-[68px] z-30">
+    <div class="max-w-7xl mx-auto flex items-center gap-3 sm:gap-6 overflow-x-auto custom-scroll pb-1">
+      
+      <button onclick="setCategory('all')" class="cat-pill active flex flex-col items-center gap-1 min-w-[70px] text-center group cursor-pointer">
+        <div class="w-12 h-12 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold text-sm shadow-sm group-hover:scale-110 transition-transform">
+          ⚡
+        </div>
+        <span class="text-xs font-bold text-brand-flipkartBlue">All Items</span>
+      </button>
+
+      <button onclick="setCategory('T-shirts')" class="cat-pill flex flex-col items-center gap-1 min-w-[70px] text-center group cursor-pointer">
+        <div class="w-12 h-12 rounded-full bg-blue-50 text-blue-700 flex items-center justify-center font-bold text-lg border border-blue-200 group-hover:scale-110 transition-transform">
+          👕
+        </div>
+        <span class="text-xs font-medium text-gray-700">T-Shirts</span>
+      </button>
+
+      <button onclick="setCategory('Hoodies')" class="cat-pill flex flex-col items-center gap-1 min-w-[70px] text-center group cursor-pointer">
+        <div class="w-12 h-12 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold text-lg border border-emerald-200 group-hover:scale-110 transition-transform">
+          🧥
+        </div>
+        <span class="text-xs font-medium text-gray-700">Hoodies</span>
+      </button>
+
+      <button onclick="setCategory('School bags')" class="cat-pill flex flex-col items-center gap-1 min-w-[70px] text-center group cursor-pointer">
+        <div class="w-12 h-12 rounded-full bg-amber-50 text-amber-700 flex items-center justify-center font-bold text-lg border border-amber-200 group-hover:scale-110 transition-transform">
+          🎒
+        </div>
+        <span class="text-xs font-medium text-gray-700">Bags</span>
+      </button>
+
+      <button onclick="setCategory('Caps')" class="cat-pill flex flex-col items-center gap-1 min-w-[70px] text-center group cursor-pointer">
+        <div class="w-12 h-12 rounded-full bg-purple-50 text-purple-700 flex items-center justify-center font-bold text-lg border border-purple-200 group-hover:scale-110 transition-transform">
+          🧢
+        </div>
+        <span class="text-xs font-medium text-gray-700">Caps</span>
+      </button>
+
+      <button onclick="setCategory('Stationery')" class="cat-pill flex flex-col items-center gap-1 min-w-[70px] text-center group cursor-pointer">
+        <div class="w-12 h-12 rounded-full bg-rose-50 text-rose-700 flex items-center justify-center font-bold text-lg border border-rose-200 group-hover:scale-110 transition-transform">
+          📐
+        </div>
+        <span class="text-xs font-medium text-gray-700">Stationery</span>
+      </button>
+
+      <button onclick="setCategory('Water bottles')" class="cat-pill flex flex-col items-center gap-1 min-w-[70px] text-center group cursor-pointer">
+        <div class="w-12 h-12 rounded-full bg-cyan-50 text-cyan-700 flex items-center justify-center font-bold text-lg border border-cyan-200 group-hover:scale-110 transition-transform">
+          💧
+        </div>
+        <span class="text-xs font-medium text-gray-700">Bottles</span>
+      </button>
+
+      <button onclick="setCategory('ID-card accessories')" class="cat-pill flex flex-col items-center gap-1 min-w-[70px] text-center group cursor-pointer">
+        <div class="w-12 h-12 rounded-full bg-indigo-50 text-indigo-700 flex items-center justify-center font-bold text-lg border border-indigo-200 group-hover:scale-110 transition-transform">
+          🪪
+        </div>
+        <span class="text-xs font-medium text-gray-700">ID Badges</span>
+      </button>
+
+      <button onclick="openAiModal()" class="flex flex-col items-center gap-1 min-w-[70px] text-center group cursor-pointer">
+        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-teal-500 to-emerald-600 text-white flex items-center justify-center font-bold text-lg shadow-sm group-hover:scale-110 transition-transform">
+          🤖
+        </div>
+        <span class="text-xs font-bold text-emerald-700">AI Kits</span>
+      </button>
+
+      <!-- EMI Spotlight Banner Pill -->
+      <div class="ml-auto hidden xl:flex items-center gap-2 bg-gradient-to-r from-amber-100 to-amber-50 border border-amber-300 px-3 py-1.5 rounded-lg text-xs font-semibold text-amber-900 shrink-0">
+        <span class="bg-amber-500 text-slate-950 font-black text-[10px] px-1.5 py-0.5 rounded">NO COST EMI</span>
+        <span>Available from <strong>₹67/month</strong> on kits!</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="max-w-7xl mx-auto px-3 sm:px-6 pt-4 w-full">
+    <div class="relative bg-gradient-to-r from-brand-amazonDark via-slate-900 to-brand-blue rounded-2xl overflow-hidden shadow-lg border border-slate-700 text-white p-6 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="space-y-3 text-center md:text-left z-10 max-w-xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400 text-slate-950 text-xs font-black uppercase tracking-wider">
+          ★ Hour of AI 2026 Special
+        </div>
+        <h1 class="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight">
+          Haria School Pride. <br class="hidden sm:inline">Engineered with AI.
+        </h1>
+        <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+          Official Shri L. G. Haria School merchandise with <strong>Zero-Cost EMI</strong>, verified house uniforms, instant campus desk pickup in Room 102, and personalized AI sizing.
+        </p>
+        <div class="flex flex-wrap items-center justify-center md:justify-start gap-3 pt-2">
+          <button onclick="applyCouponCode('HARIA10')" class="px-5 py-2.5 bg-brand-amber hover:bg-amber-500 text-slate-950 text-xs font-extrabold rounded-lg shadow-md transition-all">
+            Claim 10% Off: HARIA10
+          </button>
+          <button onclick="openAiModal()" class="px-4 py-2.5 bg-white/10 hover:bg-white/20 text-white text-xs font-bold rounded-lg border border-white/20 backdrop-blur-sm transition-all flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            Launch AI Smart Advisor
+          </button>
+        </div>
+      </div>
+
+      <!-- Trust Pillars Card -->
+      <div class="grid grid-cols-2 gap-3 w-full md:w-auto shrink-0 z-10">
+        <div class="bg-white/10 backdrop-blur-md p-3.5 rounded-xl border border-white/10 text-center">
+          <div class="text-xl font-black text-amber-400">⚡ 0% EMI</div>
+          <div class="text-[11px] text-gray-300 mt-0.5">Bajaj / HDFC / Cards</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur-md p-3.5 rounded-xl border border-white/10 text-center">
+          <div class="text-xl font-black text-emerald-400">₹0 Pickup</div>
+          <div class="text-[11px] text-gray-300 mt-0.5">Room 102 Counter</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur-md p-3.5 rounded-xl border border-white/10 text-center">
+          <div class="text-xl font-black text-cyan-400">Assured</div>
+          <div class="text-[11px] text-gray-300 mt-0.5">School Code Approved</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur-md p-3.5 rounded-xl border border-white/10 text-center">
+          <div class="text-xl font-black text-rose-400">Instant UPI</div>
+          <div class="text-[11px] text-gray-300 mt-0.5">GPay • PhonePe • QR</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-3 sm:px-6 pt-6 w-full">
+    <div class="bg-white p-4 sm:p-5 rounded-xl border border-gray-200 shadow-xs">
+      <div class="flex items-center justify-between mb-3 border-b border-gray-100 pb-2">
+        <div class="flex items-center gap-2">
+          <span class="text-brand-amber font-black text-base">★</span>
+          <h3 class="font-extrabold text-sm sm:text-base text-gray-900">Frequently Bought Together (Haria Scholar Starter Trio)</h3>
+        </div>
+        <span class="text-xs bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded">Save 18% on Combo</span>
+      </div>
+
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex flex-wrap items-center justify-center gap-3">
+          <!-- Item 1 -->
+          <div class="flex items-center gap-2 bg-gray-50 p-2 rounded-lg border border-gray-200">
+            <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=150&q=80" class="w-12 h-12 object-cover rounded">
+            <div class="text-left text-xs">
+              <p class="font-bold text-gray-800">House Cotton Tee</p>
+              <p class="text-emerald-700 font-extrabold">₹399</p>
+            </div>
+          </div>
+          <span class="font-black text-gray-400 text-lg">+</span>
+          <!-- Item 2 -->
+          <div class="flex items-center gap-2 bg-gray-50 p-2 rounded-lg border border-gray-200">
+            <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=150&q=80" class="w-12 h-12 object-cover rounded">
+            <div class="text-left text-xs">
+              <p class="font-bold text-gray-800">Insulated Steel Bottle</p>
+              <p class="text-emerald-700 font-extrabold">₹349</p>
+            </div>
+          </div>
+          <span class="font-black text-gray-400 text-lg">+</span>
+          <!-- Item 3 -->
+          <div class="flex items-center gap-2 bg-gray-50 p-2 rounded-lg border border-gray-200">
+            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=150&q=80" class="w-12 h-12 object-cover rounded">
+            <div class="text-left text-xs">
+              <p class="font-bold text-gray-800">House Lanyard Badge</p>
+              <p class="text-emerald-700 font-extrabold">₹99</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Combo CTA -->
+        <div class="flex items-center gap-3">
+          <div class="text-right">
+            <div class="text-xs text-gray-500">Combo Price: <span class="line-through text-gray-400">₹847</span></div>
+            <div class="text-lg font-black text-brand-emerald">₹695 only</div>
+            <div class="text-[10px] text-amber-700 font-semibold">Or ₹232/mo (3-month EMI)</div>
+          </div>
+          <button onclick="addBundleComboToCart()" class="py-2.5 px-4 bg-brand-amber hover:bg-amber-500 text-slate-950 text-xs font-black rounded-lg shadow-sm transition-all whitespace-nowrap">
+            Add 3 Items to Cart 🛒
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="max-w-7xl mx-auto px-3 sm:px-6 pt-6 flex-1 w-full">
+    
+    <div class="bg-white p-3.5 rounded-xl border border-gray-200 shadow-xs flex flex-wrap items-center justify-between gap-3 mb-6">
+      <div class="flex items-center gap-2">
+        <span class="font-black text-sm text-gray-800 uppercase tracking-wide">Merchandise Hub</span>
+        <span id="activeFilterBadge" class="bg-gray-100 text-gray-600 text-xs font-bold px-2 py-0.5 rounded">All Items</span>
+        <span id="productResultsCount" class="text-xs text-gray-500 font-medium">8 items found</span>
+      </div>
+
+      <!-- Quick Sort / Filter Options -->
+      <div class="flex items-center gap-2 flex-wrap text-xs font-semibold">
+        <span class="text-gray-500 hidden sm:inline">Sort By:</span>
+        <button onclick="applySort('featured')" id="sort-featured" class="sort-chip px-2.5 py-1 bg-brand-flipkartBlue text-white rounded">Featured</button>
+        <button onclick="applySort('price-asc')" id="sort-price-asc" class="sort-chip px-2.5 py-1 bg-gray-100 text-gray-700 hover:bg-gray-200 rounded">Price: Low to High</button>
+        <button onclick="applySort('price-desc')" id="sort-price-desc" class="sort-chip px-2.5 py-1 bg-gray-100 text-gray-700 hover:bg-gray-200 rounded">Price: High to Low</button>
+        <button onclick="applySort('discount')" id="sort-discount" class="sort-chip px-2.5 py-1 bg-gray-100 text-gray-700 hover:bg-gray-200 rounded">Highest Discount</button>
+        <button onclick="applySort('rating')" id="sort-rating" class="sort-chip px-2.5 py-1 bg-gray-100 text-gray-700 hover:bg-gray-200 rounded">Customer Rating</button>
+      </div>
+    </div>
+
+    <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5">
+      <!-- Injected by JavaScript -->
+    </div>
+
+    <!-- Empty Search State -->
+    <div id="noResultsState" class="hidden text-center py-16 bg-white rounded-xl border border-gray-200 my-6">
+      <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto text-gray-400 mb-3 text-2xl">
+        🔍
+      </div>
+      <h3 class="text-base font-bold text-gray-800">No school merchandise found</h3>
+      <p class="text-xs text-gray-500 mt-1">Try another keyword or click 'All Items' on the category bar.</p>
+      <button onclick="setCategory('all')" class="mt-4 px-4 py-2 bg-brand-flipkartBlue text-white text-xs font-bold rounded-lg shadow-sm">
+        Reset Search & Categories
+      </button>
+    </div>
+  </main>
+
+  <div id="cartBackdrop" onclick="toggleCartDrawer(false)" class="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 hidden transition-opacity"></div>
+  <aside id="cartDrawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-white z-50 shadow-2xl flex flex-col transform drawer-closed transition-transform duration-300 ease-in-out border-l border-gray-200">
+    
+    <!-- Drawer Header -->
+    <div class="p-4 bg-brand-amazonDark text-white flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <svg class="w-5 h-5 text-brand-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+        <h3 class="font-extrabold text-sm sm:text-base">My Haria Shopping Cart</h3>
+        <span id="drawerBadge" class="bg-brand-amber text-slate-950 font-black text-xs px-2 py-0.5 rounded-full">0</span>
+      </div>
+      <button onclick="toggleCartDrawer(false)" class="text-gray-300 hover:text-white p-1">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <!-- Free Delivery Progress Bar (Amazon/Flipkart style) -->
+    <div class="bg-amber-50 p-3 border-b border-amber-200 text-xs">
+      <div class="flex items-center justify-between font-bold text-amber-900 mb-1">
+        <span id="freeShippingBanner">Add items worth ₹500 for Free Home Delivery!</span>
+        <span id="freeShippingPercent" class="text-amber-700">0%</span>
+      </div>
+      <div class="w-full bg-amber-200 h-2 rounded-full overflow-hidden">
+        <div id="freeShippingBar" class="bg-brand-emerald h-full transition-all duration-300" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <!-- Cart Items Scroll List -->
+    <div id="cartItemsList" class="flex-1 overflow-y-auto p-4 space-y-4 divide-y divide-gray-100">
+      <!-- Items dynamically injected -->
+    </div>
+
+    <!-- Empty Cart Notification -->
+    <div id="emptyCartView" class="hidden flex-1 flex flex-col items-center justify-center p-8 text-center">
+      <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center text-gray-400 mb-2 text-2xl">
+        🛒
+      </div>
+      <h4 class="font-extrabold text-gray-800 text-sm">Your Cart is Empty</h4>
+      <p class="text-xs text-gray-500 mt-1 max-w-xs">Explore official Haria hoodies, caps, bags, and student kits.</p>
+      <button onclick="toggleCartDrawer(false)" class="mt-4 px-4 py-2 bg-brand-amber hover:bg-amber-500 text-slate-950 font-black text-xs rounded-lg transition-all">
+        Shop Student Deals
+      </button>
+    </div>
+
+    <!-- Cart Footer & Interactive Coupon Selector -->
+    <div id="cartFooter" class="p-4 border-t border-gray-200 bg-gray-50 space-y-3">
+      
+      <!-- Quick Promo Coupons Selection -->
+      <div>
+        <label class="block text-[11px] font-bold text-gray-600 uppercase mb-1">Apply Student Discount Voucher:</label>
+        <div class="flex items-center gap-1.5 overflow-x-auto pb-1">
+          <button onclick="applyCouponCode('HARIA10')" class="px-2 py-1 bg-white border border-gray-300 hover:border-brand-emerald rounded text-[10px] font-bold text-gray-700 shrink-0">
+            🎟️ HARIA10 (10% OFF)
+          </button>
+          <button onclick="applyCouponCode('STUDENT20')" class="px-2 py-1 bg-white border border-gray-300 hover:border-brand-emerald rounded text-[10px] font-bold text-gray-700 shrink-0">
+            🎟️ STUDENT20 (20% OFF > ₹800)
+          </button>
+          <button onclick="applyCouponCode('FREESHIP')" class="px-2 py-1 bg-white border border-gray-300 hover:border-brand-emerald rounded text-[10px] font-bold text-gray-700 shrink-0">
+            🎟️ FREESHIP
+          </button>
+        </div>
+      </div>
+
+      <!-- Manual Coupon Input -->
+      <div class="flex items-center gap-2">
+        <input 
+          type="text" 
+          id="customCouponInput" 
+          placeholder="Enter Coupon Code" 
+          class="flex-1 px-3 py-1.5 text-xs uppercase bg-white border border-gray-300 rounded focus:ring-1 focus:ring-brand-emerald"
+        >
+        <button onclick="applyManualCoupon()" class="px-3 py-1.5 bg-slate-900 text-white text-xs font-bold rounded hover:bg-slate-800">
+          Apply
+        </button>
+      </div>
+      <p id="couponStatusMessage" class="text-[11px] font-bold hidden"></p>
+
+      <!-- Cost Summary -->
+      <div class="space-y-1.5 text-xs text-gray-600 pt-1">
+        <div class="flex justify-between">
+          <span>Items Total (MRP)</span>
+          <span id="cartMrpTotal" class="text-gray-400 line-through">₹0</span>
+        </div>
+        <div class="flex justify-between">
+          <span>Special Student Price</span>
+          <span id="cartSubtotal" class="font-bold text-gray-800">₹0</span>
+        </div>
+        <div id="cartDiscountRow" class="flex justify-between text-brand-emerald font-bold hidden">
+          <span>Coupon Savings</span>
+          <span id="cartDiscountVal">-₹0</span>
+        </div>
+        <div class="flex justify-between">
+          <span>Delivery / Campus Pickup</span>
+          <span id="cartDeliveryCharge" class="text-brand-emerald font-bold">FREE (Room 102)</span>
+        </div>
+        
+        <!-- EMI teaser in cart -->
+        <div class="p-2 bg-amber-50 rounded border border-amber-200 flex items-center justify-between text-[11px] text-amber-900 font-semibold">
+          <span>No Cost EMI Option:</span>
+          <span id="cartEmiTeaser" class="font-black">From ₹0/mo</span>
+        </div>
+
+        <div class="flex justify-between text-base font-black text-slate-900 pt-2 border-t border-gray-200">
+          <span>Final Amount</span>
+          <span id="cartFinalAmount">₹0</span>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="grid grid-cols-2 gap-2 pt-1">
+        <button onclick="openCheckoutModal('cart')" class="w-full py-3 bg-brand-amber hover:bg-amber-500 text-slate-950 text-xs font-black rounded-lg shadow-sm transition-all flex items-center justify-center gap-1.5">
+          <span>Proceed To Pay</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </button>
+        <button onclick="openEmiBreakdownModal()" class="w-full py-3 bg-brand-flipkartBlue hover:bg-blue-700 text-white text-xs font-black rounded-lg shadow-sm transition-all flex items-center justify-center gap-1">
+          <span>Buy on 0% EMI</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <div id="quickViewModal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-xs hidden">
+    <div class="bg-white w-full max-w-3xl rounded-2xl overflow-hidden shadow-2xl border border-gray-200 relative modal-enter max-h-[92vh] flex flex-col md:flex-row">
+      
+      <!-- Close button -->
+      <button onclick="closeQuickView()" class="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-700">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <!-- Left Media Column -->
+      <div class="md:w-1/2 bg-gray-50 p-6 flex flex-col items-center justify-center border-b md:border-b-0 md:border-r border-gray-200">
+        <img id="modalProductImg" src="" alt="Merchandise Preview" class="w-full h-64 sm:h-72 object-cover rounded-xl shadow-xs">
+        <div class="mt-3 flex items-center gap-2">
+          <span class="text-[10px] bg-slate-900 text-white px-2 py-0.5 rounded font-black">HARIA ASSURED</span>
+          <span class="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded">100% Genuine</span>
+        </div>
+      </div>
+
+      <!-- Right Details & Customizer Column -->
+      <div class="md:w-1/2 p-6 overflow-y-auto space-y-4">
+        <div>
+          <span id="modalCategoryTag" class="text-[10px] font-black uppercase tracking-wider text-brand-flipkartBlue bg-blue-50 px-2 py-0.5 rounded"></span>
+          <h2 id="modalProductTitle" class="text-lg font-black text-gray-900 mt-1 leading-snug"></h2>
+          
+          <!-- Rating bar -->
+          <div class="flex items-center gap-2 mt-1.5">
+            <div class="bg-emerald-700 text-white font-black text-xs px-2 py-0.5 rounded flex items-center gap-1">
+              <span id="modalRating">4.8</span> ★
+            </div>
+            <span id="modalRatingsCount" class="text-xs text-gray-500 font-medium">1,240 ratings & 180 reviews</span>
+          </div>
+
+          <!-- Price & Discounts -->
+          <div class="flex items-baseline gap-2.5 mt-3">
+            <span id="modalCurrentPrice" class="text-2xl font-black text-slate-900"></span>
+            <span id="modalMrpPrice" class="text-sm text-gray-400 line-through"></span>
+            <span id="modalDiscountTag" class="text-xs font-black text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded"></span>
+          </div>
+
+          <!-- EMI Breakdown Notice -->
+          <div class="mt-2 p-2 bg-amber-50 border border-amber-200 rounded-lg flex items-center justify-between text-xs text-amber-900">
+            <span>💳 <strong>No Cost EMI:</strong> from <span id="modalEmiRate" class="font-extrabold">₹67/mo</span></span>
+            <button onclick="openEmiBreakdownModal()" class="text-blue-700 underline font-bold text-[11px]">View Plans</button>
+          </div>
+        </div>
+
+        <!-- Description -->
+        <p id="modalDescription" class="text-xs text-gray-600 leading-relaxed"></p>
+
+        <!-- Apparel Size Selector -->
+        <div id="modalSizeSection">
+          <div class="flex items-center justify-between mb-1.5">
+            <label class="text-xs font-extrabold text-gray-800 uppercase">Select Size:</label>
+            <button onclick="openSizeChartModal()" class="text-[11px] text-blue-600 underline font-bold">Size Chart</button>
+          </div>
+          <div class="flex items-center gap-2" id="modalSizeGroup">
+            <button onclick="setModalSize('S')" class="size-pill px-3 py-1.5 text-xs font-bold border border-gray-300 rounded hover:border-black">S</button>
+            <button onclick="setModalSize('M')" class="size-pill px-3 py-1.5 text-xs font-bold border-2 border-brand-flipkartBlue bg-blue-50 text-brand-flipkartBlue rounded">M</button>
+            <button onclick="setModalSize('L')" class="size-pill px-3 py-1.5 text-xs font-bold border border-gray-300 rounded hover:border-black">L</button>
+            <button onclick="setModalSize('XL')" class="size-pill px-3 py-1.5 text-xs font-bold border border-gray-300 rounded hover:border-black">XL</button>
+            <button onclick="setModalSize('XXL')" class="size-pill px-3 py-1.5 text-xs font-bold border border-gray-300 rounded hover:border-black">XXL</button>
+          </div>
+        </div>
+
+        <!-- Pincode Delivery Checker (Amazon/Flipkart feature) -->
+        <div class="p-3 bg-gray-50 rounded-lg border border-gray-200">
+          <label class="block text-[11px] font-bold text-gray-700 uppercase mb-1">Check Delivery / Desk Pickup:</label>
+          <div class="flex items-center gap-2">
+            <input type="text" id="checkPinInput" maxlength="6" value="361001" placeholder="Enter Pincode" class="w-32 px-2.5 py-1 text-xs border border-gray-300 rounded bg-white font-mono">
+            <button onclick="verifyPincode()" class="px-3 py-1 bg-slate-800 text-white font-bold text-xs rounded hover:bg-slate-700">Check</button>
+          </div>
+          <p id="pincodeResultText" class="text-[11px] text-emerald-700 font-bold mt-1.5">✓ Instant Campus Pickup Available at Room 102 | Home delivery in 2 days</p>
+        </div>
+
+        <!-- Quantity Picker & Purchase CTAs -->
+        <div class="pt-2 border-t border-gray-200 space-y-3">
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-bold text-gray-700 uppercase">Quantity:</span>
+            <div class="flex items-center border border-gray-300 rounded">
+              <button onclick="alterModalQty(-1)" class="px-3 py-1 text-gray-700 hover:bg-gray-100 font-black">-</button>
+              <span id="modalQuantityDisplay" class="px-3 text-xs font-black">1</span>
+              <button onclick="alterModalQty(1)" class="px-3 py-1 text-gray-700 hover:bg-gray-100 font-black">+</button>
+            </div>
+            <span class="text-[11px] text-red-600 font-bold">Only 4 left in stock!</span>
+          </div>
+
+          <!-- Dual Buying Buttons: Add to Cart & Buy Now -->
+          <div class="grid grid-cols-2 gap-2">
+            <button onclick="addModalItemToCart()" class="py-3 bg-brand-amber hover:bg-amber-500 text-slate-950 font-black text-xs rounded-lg shadow-sm transition-all flex items-center justify-center gap-1.5">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+              <span>Add to Cart</span>
+            </button>
+            <button onclick="buyNowFromModal()" class="py-3 bg-brand-flipkartBlue hover:bg-blue-700 text-white font-black text-xs rounded-lg shadow-sm transition-all flex items-center justify-center gap-1.5">
+              <span>⚡ Buy Now</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="sizeChartModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs hidden">
+    <div class="bg-white w-full max-w-md rounded-xl p-5 shadow-2xl border border-gray-200">
+      <div class="flex items-center justify-between pb-3 border-b border-gray-200">
+        <h4 class="font-extrabold text-sm text-gray-900">Shri L. G. Haria Apparel Size Guide</h4>
+        <button onclick="closeSizeChartModal()" class="text-gray-400 hover:text-gray-700 text-lg font-bold">✕</button>
+      </div>
+      <div class="py-3">
+        <table class="w-full text-xs text-left">
+          <thead class="bg-gray-100 text-gray-700 font-bold">
+            <tr>
+              <th class="p-2">Size</th>
+              <th class="p-2">Chest (Inches)</th>
+              <th class="p-2">Length</th>
+              <th class="p-2">Recommended Grade</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100 font-medium">
+            <tr><td class="p-2 font-bold">S</td><td class="p-2">34 - 36"</td><td class="p-2">26"</td><td class="p-2">Grades 5 - 7</td></tr>
+            <tr><td class="p-2 font-bold">M</td><td class="p-2">38 - 40"</td><td class="p-2">28"</td><td class="p-2">Grades 8 - 9</td></tr>
+            <tr><td class="p-2 font-bold">L</td><td class="p-2">42 - 44"</td><td class="p-2">30"</td><td class="p-2">Grades 10 - 11</td></tr>
+            <tr><td class="p-2 font-bold">XL</td><td class="p-2">46 - 48"</td><td class="p-2">31"</td><td class="p-2">Grade 12 / Faculty</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <button onclick="closeSizeChartModal()" class="w-full py-2 bg-slate-900 text-white font-bold text-xs rounded-lg mt-2">
+        Got It
+      </button>
+    </div>
+  </div>
+
+  <div id="emiBreakdownModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs hidden">
+    <div class="bg-white w-full max-w-lg rounded-2xl p-6 shadow-2xl border border-gray-200">
+      <div class="flex items-center justify-between pb-3 border-b border-gray-200">
+        <div class="flex items-center gap-2">
+          <span class="text-xl">💳</span>
+          <div>
+            <h4 class="font-extrabold text-sm text-gray-900">No Cost EMI Plans (0% Interest)</h4>
+            <p class="text-[11px] text-gray-500">Sponsored by Shri L. G. Haria Student Support Fund</p>
+          </div>
+        </div>
+        <button onclick="closeEmiModal()" class="text-gray-400 hover:text-gray-700 text-lg font-bold">✕</button>
+      </div>
+
+      <div class="py-4 space-y-3">
+        <!-- 3 Month Plan -->
+        <div class="p-3 bg-blue-50 border border-blue-200 rounded-xl flex items-center justify-between">
+          <div>
+            <div class="font-extrabold text-xs text-brand-flipkartBlue">3 Months No Cost EMI</div>
+            <div class="text-[11px] text-gray-600">Zero processing fee • Available on all major debit/credit cards</div>
+          </div>
+          <div class="text-right">
+            <div id="emi3MonthVal" class="text-sm font-black text-gray-950">₹133/mo</div>
+            <div class="text-[10px] text-emerald-700 font-bold">Total: No Interest</div>
+          </div>
+        </div>
+
+        <!-- 6 Month Plan -->
+        <div class="p-3 bg-emerald-50 border border-emerald-200 rounded-xl flex items-center justify-between">
+          <div>
+            <div class="font-extrabold text-xs text-emerald-800">6 Months Low Cost EMI</div>
+            <div class="text-[11px] text-gray-600">Bajaj Finserv & Student ID linked billing</div>
+          </div>
+          <div class="text-right">
+            <div id="emi6MonthVal" class="text-sm font-black text-gray-950">₹67/mo</div>
+            <div class="text-[10px] text-emerald-700 font-bold">Super Saver</div>
+          </div>
+        </div>
+      </div>
+
+      <button onclick="closeEmiModal()" class="w-full py-2.5 bg-brand-flipkartBlue text-white font-bold text-xs rounded-lg">
+        Continue with EMI at Checkout
+      </button>
+    </div>
+  </div>
+
+  <div id="checkoutModal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-xs hidden overflow-y-auto">
+    <div class="bg-white w-full max-w-2xl rounded-2xl shadow-2xl border border-gray-200 my-6 overflow-hidden max-h-[92vh] flex flex-col modal-enter">
+      
+      <!-- Checkout Header -->
+      <div class="p-4 bg-brand-amazonDark text-white flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div class="w-7 h-7 rounded bg-brand-amber text-slate-950 font-black text-xs flex items-center justify-center">H</div>
+          <div>
+            <h3 class="font-black text-sm sm:text-base">Shri L. G. Haria Secure Checkout</h3>
+            <p class="text-[10px] text-gray-300">Jamnagar Student Verification Portal</p>
+          </div>
+        </div>
+        <button onclick="closeCheckoutModal()" class="text-gray-300 hover:text-white">✕</button>
+      </div>
+
+      <!-- Checkout Form -->
+      <form id="checkoutForm" onsubmit="handleFinalOrderSubmit(event)" class="p-5 overflow-y-auto space-y-4 text-xs">
+        
+        <!-- Step 1: Student Details -->
+        <div>
+          <h4 class="font-extrabold text-xs uppercase tracking-wider text-brand-amazonDark mb-2 flex items-center gap-1.5">
+            <span class="w-4 h-4 rounded-full bg-slate-900 text-white inline-flex items-center justify-center text-[10px]">1</span>
+            Student Identification
+          </h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block font-bold text-gray-700 mb-1">Student Full Name *</label>
+              <input type="text" id="custName" required placeholder="e.g. Diya Sharma" class="w-full px-3 py-2 border border-gray-300 rounded text-xs focus:ring-1 focus:ring-brand-flipkartBlue">
+            </div>
+            <div>
+              <label class="block font-bold text-gray-700 mb-1">Roll Number & Grade-Div *</label>
+              <input type="text" id="custRoll" required placeholder="e.g. Roll 18, 9th-A" class="w-full px-3 py-2 border border-gray-300 rounded text-xs focus:ring-1 focus:ring-brand-flipkartBlue">
+            </div>
+            <div>
+              <label class="block font-bold text-gray-700 mb-1">Parent Mobile (+91) *</label>
+              <input type="tel" id="custPhone" required pattern="[0-9]{10}" placeholder="10-digit number" class="w-full px-3 py-2 border border-gray-300 rounded text-xs focus:ring-1 focus:ring-brand-flipkartBlue">
+            </div>
+            <div>
+              <label class="block font-bold text-gray-700 mb-1">Parent Email *</label>
+              <input type="email" id="custEmail" required placeholder="parent@gmail.com" class="w-full px-3 py-2 border border-gray-300 rounded text-xs focus:ring-1 focus:ring-brand-flipkartBlue">
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Delivery vs Campus Desk Pickup -->
+        <div class="pt-2 border-t border-gray-200">
+          <h4 class="font-extrabold text-xs uppercase tracking-wider text-brand-amazonDark mb-2 flex items-center gap-1.5">
+            <span class="w-4 h-4 rounded-full bg-slate-900 text-white inline-flex items-center justify-center text-[10px]">2</span>
+            Fulfillment Mode
+          </h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <label class="flex items-start gap-2.5 p-3 border-2 border-brand-emerald bg-emerald-50 rounded-xl cursor-pointer">
+              <input type="radio" name="checkoutFulfillment" value="pickup" checked onchange="toggleFulfillmentType('pickup')" class="mt-0.5">
+              <div>
+                <span class="font-extrabold text-slate-900 block">🏫 Free Campus Pickup</span>
+                <span class="text-[10px] text-gray-600">Collect at Haria Store Desk (Room 102). Ready in 24 hrs.</span>
+              </div>
+            </label>
+            <label class="flex items-start gap-2.5 p-3 border border-gray-300 bg-white rounded-xl cursor-pointer hover:border-gray-400">
+              <input type="radio" name="checkoutFulfillment" value="home" onchange="toggleFulfillmentType('home')" class="mt-0.5">
+              <div>
+                <span class="font-extrabold text-slate-900 block">🚚 Jamnagar Doorstep Delivery</span>
+                <span class="text-[10px] text-gray-600">Directly to residential address across Jamnagar pin codes.</span>
+              </div>
+            </label>
+          </div>
+          <div id="homeAddressField" class="hidden mt-2">
+            <textarea id="homeAddressVal" rows="2" placeholder="Complete Home Address in Jamnagar (Society name, Landmark, PIN 36100X)" class="w-full p-2 border border-gray-300 rounded text-xs"></textarea>
+          </div>
+        </div>
+
+        <!-- Step 3: Payment Options (UPI QR / Card / EMI / COD) -->
+        <div class="pt-2 border-t border-gray-200">
+          <h4 class="font-extrabold text-xs uppercase tracking-wider text-brand-amazonDark mb-2 flex items-center gap-1.5">
+            <span class="w-4 h-4 rounded-full bg-slate-900 text-white inline-flex items-center justify-center text-[10px]">3</span>
+            Payment Mode (UPI, Cards, No Cost EMI, COD)
+          </h4>
+
+          <div class="grid grid-cols-4 gap-1.5 mb-3">
+            <button type="button" onclick="setCheckoutPaymentTab('upi')" id="chkTabUpi" class="py-2 border-2 border-brand-flipkartBlue bg-blue-50 text-brand-flipkartBlue font-bold rounded text-center">UPI / QR</button>
+            <button type="button" onclick="setCheckoutPaymentTab('emi')" id="chkTabEmi" class="py-2 border border-gray-300 text-gray-700 font-bold rounded text-center hover:bg-gray-50">0% EMI</button>
+            <button type="button" onclick="setCheckoutPaymentTab('card')" id="chkTabCard" class="py-2 border border-gray-300 text-gray-700 font-bold rounded text-center hover:bg-gray-50">Card</button>
+            <button type="button" onclick="setCheckoutPaymentTab('cod')" id="chkTabCod" class="py-2 border border-gray-300 text-gray-700 font-bold rounded text-center hover:bg-gray-50">Cash/Desk</button>
+          </div>
+
+          <!-- UPI QR Box -->
+          <div id="chkPanelUpi" class="p-3 bg-gray-50 rounded-xl border border-gray-200 flex flex-col sm:flex-row items-center gap-4">
+            <div class="w-24 h-24 bg-white p-2 border border-gray-300 rounded-lg flex items-center justify-center shrink-0 shadow-xs">
+              <svg class="w-full h-full text-slate-800" viewBox="0 0 24 24" fill="currentColor"><path d="M2 2h8v8H2V2zm2 2v4h4V4H4zm10-2h8v8h-8V2zm2 2v4h4V4h-4zM2 14h8v8H2v-8zm2 2v4h4v-4H4zm14 0h4v2h-4v-2zm-4-2h2v4h-2v-4zm4 4h4v4h-4v-4zm-4 2h2v2h-2v-2zm-2-4h2v2h-2v-2zm6-4h2v2h-2v-2z"/></svg>
+            </div>
+            <div class="space-y-1 w-full">
+              <p class="font-extrabold text-gray-800">Scan QR Code via PhonePe / GPay / Paytm</p>
+              <input type="text" placeholder="Or enter VPA: student@okaxis / mobile@upi" class="w-full p-2 border border-gray-300 rounded bg-white text-xs">
+              <p class="text-[10px] text-gray-500">Official Merchant: <strong>Shri L. G. Haria School Store</strong></p>
+            </div>
+          </div>
+
+          <!-- EMI Plan Box -->
+          <div id="chkPanelEmi" class="hidden p-3 bg-amber-50 rounded-xl border border-amber-200 space-y-2">
+            <p class="font-extrabold text-amber-900">Select No Cost EMI Tenure:</p>
+            <label class="flex items-center justify-between p-2 bg-white rounded border border-amber-300 cursor-pointer">
+              <div class="flex items-center gap-2">
+                <input type="radio" name="emiTenure" checked>
+                <span class="font-bold">3 Months No Cost Plan</span>
+              </div>
+              <span id="chkEmi3Cost" class="font-black text-brand-emerald">₹133/month</span>
+            </label>
+            <label class="flex items-center justify-between p-2 bg-white rounded border border-amber-300 cursor-pointer">
+              <div class="flex items-center gap-2">
+                <input type="radio" name="emiTenure">
+                <span class="font-bold">6 Months Easy Plan</span>
+              </div>
+              <span id="chkEmi6Cost" class="font-black text-brand-emerald">₹67/month</span>
+            </label>
+          </div>
+
+          <!-- Card Box -->
+          <div id="chkPanelCard" class="hidden p-3 bg-gray-50 rounded-xl border border-gray-200 space-y-2">
+            <div>
+              <label class="block font-bold text-gray-700 mb-0.5">Card Number</label>
+              <input type="text" maxlength="19" placeholder="4532 •••• •••• ••••" class="w-full p-2 border border-gray-300 rounded bg-white text-xs font-mono">
+            </div>
+            <div class="grid grid-cols-2 gap-2">
+              <input type="text" placeholder="MM/YY" maxlength="5" class="p-2 border border-gray-300 rounded bg-white text-xs">
+              <input type="password" placeholder="CVV" maxlength="3" class="p-2 border border-gray-300 rounded bg-white text-xs">
+            </div>
+          </div>
+
+          <!-- COD Box -->
+          <div id="chkPanelCod" class="hidden p-3 bg-emerald-50 rounded-xl border border-emerald-200 text-emerald-900 space-y-1">
+            <p class="font-extrabold">💵 Pay at Campus Desk / Cash on Delivery</p>
+            <p class="text-[11px]">Pay in cash at Room 102 when inspecting your merchandise sizing.</p>
+          </div>
+        </div>
+
+        <!-- Payable Bar -->
+        <div class="p-3 bg-gray-100 rounded-lg flex items-center justify-between font-black text-sm">
+          <span>Net Payable:</span>
+          <span id="checkoutPayableAmount" class="text-base text-brand-emerald font-black">₹0</span>
+        </div>
+
+        <div class="flex items-center gap-3 pt-2">
+          <button type="button" onclick="closeCheckoutModal()" class="w-1/3 py-2.5 bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold rounded-lg">Back</button>
+          <button type="submit" class="w-2/3 py-3 bg-brand-amber hover:bg-amber-500 text-slate-950 font-black rounded-lg shadow transition-all flex items-center justify-center gap-1.5">
+            <span>Place Haria Order Now</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="orderSuccessModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-xs hidden">
+    <div class="bg-white w-full max-w-lg rounded-2xl shadow-2xl border border-gray-200 p-6 text-center modal-enter">
+      
+      <!-- Verification Badge -->
+      <div class="w-14 h-14 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto mb-2 text-2xl font-black">
+        ✓
+      </div>
+
+      <span class="text-[10px] font-black uppercase tracking-widest text-emerald-800 bg-emerald-100 px-3 py-0.5 rounded-full">Order Verified</span>
+      <h3 class="text-xl font-black text-gray-900 mt-2">Order Confirmed!</h3>
+      <p class="text-xs text-gray-500 mt-0.5">Thank you for supporting Shri L. G. Haria School merchandise.</p>
+
+      <!-- Receipt Breakdown -->
+      <div class="my-4 p-4 bg-gray-50 border border-gray-200 rounded-xl text-left space-y-2 text-xs">
+        <div class="flex justify-between border-b border-gray-200 pb-1.5">
+          <span class="text-gray-500">Order ID:</span>
+          <span id="receiptOrderId" class="font-mono font-black text-slate-900"></span>
+        </div>
+        <div class="flex justify-between border-b border-gray-200 pb-1.5">
+          <span class="text-gray-500">Student & Roll:</span>
+          <span id="receiptStudentInfo" class="font-bold text-gray-800"></span>
+        </div>
+        <div class="flex justify-between border-b border-gray-200 pb-1.5">
+          <span class="text-gray-500">Fulfillment Mode:</span>
+          <span id="receiptFulfillment" class="font-bold text-emerald-700"></span>
+        </div>
+        <div class="flex justify-between border-b border-gray-200 pb-1.5">
+          <span class="text-gray-500">Payment Status:</span>
+          <span id="receiptPayment" class="font-bold text-gray-800"></span>
+        </div>
+        <div class="flex justify-between pt-1 font-black text-sm text-slate-900">
+          <span>Amount Paid / Booked:</span>
+          <span id="receiptTotal"></span>
+        </div>
+      </div>
+
+      <!-- Campus instructions notice -->
+      <div class="p-3 bg-amber-50 rounded-lg text-amber-900 text-[11px] text-left leading-relaxed mb-4">
+        📍 <strong>Campus Pickup:</strong> Please show your Student ID Card or Roll No at Room 102 (Haria Merchandise Desk) during lunch break or after 2:30 PM.
+      </div>
+
+      <div class="flex items-center gap-3">
+        <button onclick="window.print()" class="flex-1 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold rounded-lg text-xs flex items-center justify-center gap-1.5">
+          🖨️ Print Invoice
+        </button>
+        <button onclick="dismissReceiptModal()" class="flex-1 py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-lg text-xs">
+          Continue Shopping
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="aiRecommenderModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs hidden">
+    <div class="bg-white w-full max-w-xl rounded-2xl shadow-2xl border-2 border-emerald-400 p-6 relative modal-enter">
+      <button onclick="closeAiModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700">✕</button>
+
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-emerald to-teal-400 text-white flex items-center justify-center text-xl shadow-md font-bold">
+          🤖
+        </div>
+        <div>
+          <h3 class="text-base sm:text-lg font-black text-gray-900">Haria AI Smart Bundle & Sizing Assistant</h3>
+          <p class="text-xs text-gray-500">Calculates official gear & discounted kits matching your grade</p>
+        </div>
+      </div>
+
+      <!-- AI Question wizard -->
+      <div id="aiWizardQuestions" class="space-y-4 text-xs">
+        <div>
+          <label class="block font-bold text-gray-700 mb-1.5">1. Student Grade / Section:</label>
+          <div class="grid grid-cols-3 gap-2">
+            <button type="button" onclick="selectAiOption('grade', 'primary')" class="ai-opt-grade py-2 px-2 border border-gray-300 rounded font-semibold hover:border-brand-emerald text-center">Primary (1st-5th)</button>
+            <button type="button" onclick="selectAiOption('grade', 'middle')" class="ai-opt-grade py-2 px-2 border-2 border-brand-emerald bg-emerald-50 text-emerald-800 font-bold rounded text-center">Middle (6th-8th)</button>
+            <button type="button" onclick="selectAiOption('grade', 'high')" class="ai-opt-grade py-2 px-2 border border-gray-300 rounded font-semibold hover:border-brand-emerald text-center">High (9th-12th)</button>
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-bold text-gray-700 mb-1.5">2. School House Team:</label>
+          <div class="grid grid-cols-4 gap-2">
+            <button type="button" onclick="selectAiOption('house', 'Falcons (Red)')" class="ai-opt-house py-2 border-2 border-red-500 bg-red-50 text-red-700 font-bold rounded text-center">Falcons 🔴</button>
+            <button type="button" onclick="selectAiOption('house', 'Hawks (Blue)')" class="ai-opt-house py-2 border border-gray-300 hover:border-blue-500 font-bold rounded text-center">Hawks 🔵</button>
+            <button type="button" onclick="selectAiOption('house', 'Eagles (Green)')" class="ai-opt-house py-2 border border-gray-300 hover:border-emerald-500 font-bold rounded text-center">Eagles 🟢</button>
+            <button type="button" onclick="selectAiOption('house', 'Tigers (Yellow)')" class="ai-opt-house py-2 border border-gray-300 hover:border-amber-500 font-bold rounded text-center">Tigers 🟡</button>
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-bold text-gray-700 mb-1.5">3. Height & Preferred Fit:</label>
+          <select id="aiHeightFit" class="w-full p-2 border border-gray-300 rounded bg-white text-xs font-medium">
+            <option value="S">4'2" to 4'9" (Recommended Size: S)</option>
+            <option value="M" selected>4'10" to 5'4" (Recommended Size: M)</option>
+            <option value="L">5'5" to 5'9" (Recommended Size: L)</option>
+            <option value="XL">5'10"+ (Recommended Size: XL)</option>
+          </select>
+        </div>
+
+        <button onclick="computeAiRecommendation()" class="w-full py-3 bg-brand-emerald hover:bg-emerald-600 text-white font-black text-xs sm:text-sm rounded-lg shadow transition-all flex items-center justify-center gap-1.5">
+          <span>Generate Curated Kit with AI</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </button>
+      </div>
+
+      <!-- AI Result View -->
+      <div id="aiWizardResult" class="hidden space-y-3 text-xs">
+        <div class="p-3 bg-emerald-50 border border-emerald-200 rounded-xl">
+          <div class="flex items-center justify-between font-black text-emerald-900">
+            <span>🎯 Tailored Haria Starter Kit</span>
+            <span class="bg-emerald-200 text-emerald-900 px-2 py-0.5 rounded text-[10px]">15% Combo Savings</span>
+          </div>
+          <p id="aiSummaryReasoning" class="text-gray-600 mt-1 text-[11px]"></p>
+        </div>
+
+        <div id="aiBundleProductsList" class="space-y-2">
+          <!-- Populated via script -->
+        </div>
+
+        <div class="flex items-center justify-between font-bold text-sm pt-2 border-t border-gray-200">
+          <span>Kit Price (3 Items):</span>
+          <span id="aiKitPriceDisplay" class="text-emerald-800 font-black"></span>
+        </div>
+
+        <div class="grid grid-cols-2 gap-2 pt-1">
+          <button onclick="resetAiWizard()" class="py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold rounded-lg text-xs">
+            Re-calculate
+          </button>
+          <button onclick="addAiBundleToCart()" class="py-2.5 bg-brand-flipkartBlue hover:bg-blue-700 text-white font-black rounded-lg text-xs shadow">
+            Add Kit to Cart 🛍️
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fixed bottom-5 right-5 z-40">
+    <button 
+      onclick="toggleChatBot()" 
+      class="flex items-center gap-2 px-4 py-3 bg-brand-amazonDark hover:bg-slate-900 text-white rounded-full shadow-2xl border-2 border-amber-400 hover:scale-105 transition-all glow-amber"
+    >
+      <div class="relative">
+        <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+        <span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-emerald-400 rounded-full animate-ping"></span>
+      </div>
+      <span class="text-xs font-black tracking-wide hidden sm:inline text-amber-300">Ask Haria AI</span>
+    </button>
+  </div>
+
+  <!-- Chatbot Window -->
+  <div id="chatBotWindow" class="fixed bottom-20 right-4 sm:right-6 w-80 sm:w-96 bg-white rounded-2xl shadow-2xl border border-gray-300 z-40 hidden flex flex-col overflow-hidden modal-enter">
+    <div class="p-3 bg-brand-amazonDark text-white flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></div>
+        <div>
+          <h4 class="font-bold text-xs">Haria AI Shopping Genius</h4>
+          <p class="text-[10px] text-gray-300">Hour of AI Virtual Assistant</p>
+        </div>
+      </div>
+      <button onclick="toggleChatBot()" class="text-gray-300 hover:text-white">✕</button>
+    </div>
+
+    <!-- Messages -->
+    <div id="chatMessageStream" class="p-3 h-64 overflow-y-auto space-y-2 text-xs bg-gray-50">
+      <div class="flex items-start gap-2">
+        <div class="w-6 h-6 rounded-full bg-brand-amber text-slate-950 font-black flex items-center justify-center text-[10px] shrink-0">AI</div>
+        <div class="bg-white p-2.5 rounded-xl rounded-tl-none border border-gray-200 text-gray-800 leading-relaxed shadow-xs">
+          Namaste! I am the Haria AI Assistant. Ask me about No Cost EMI, winter hoodies dress code, items under ₹300, or Room 102 desk pickups.
+        </div>
+      </div>
+    </div>
+
+    <!-- Prompt suggestions -->
+    <div class="p-1.5 bg-white border-t border-gray-100 flex items-center gap-1 overflow-x-auto text-[10px] whitespace-nowrap">
+      <button onclick="sendBotPrompt('Show items under ₹300')" class="px-2 py-1 bg-gray-100 hover:bg-blue-50 rounded-full border">Items under ₹300</button>
+      <button onclick="sendBotPrompt('How does 0% EMI work?')" class="px-2 py-1 bg-gray-100 hover:bg-blue-50 rounded-full border">0% EMI Info</button>
+      <button onclick="sendBotPrompt('Where is campus pickup?')" class="px-2 py-1 bg-gray-100 hover:bg-blue-50 rounded-full border">Room 102 Desk</button>
+    </div>
+
+    <!-- Chat input -->
+    <form onsubmit="handleChatSubmit(event)" class="p-2 bg-white border-t border-gray-200 flex items-center gap-2">
+      <input type="text" id="chatInputBox" placeholder="Ask about uniforms, discounts, EMI..." class="flex-1 px-3 py-1.5 text-xs border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-brand-flipkartBlue">
+      <button type="submit" class="p-1.5 bg-brand-flipkartBlue text-white rounded hover:bg-blue-700">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+      </button>
+    </form>
+  </div>
+
+  <div id="wishlistModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs hidden">
+    <div class="bg-white w-full max-w-md rounded-2xl p-5 shadow-2xl border border-gray-200 modal-enter max-h-[80vh] flex flex-col">
+      <div class="flex items-center justify-between pb-3 border-b border-gray-200">
+        <h4 class="font-extrabold text-sm text-gray-900 flex items-center gap-1.5">
+          <span class="text-rose-500">♥</span> My Saved Wishlist
+        </h4>
+        <button onclick="closeWishlistModal()" class="text-gray-400 hover:text-gray-700 font-bold">✕</button>
+      </div>
+
+      <div id="wishlistContainer" class="flex-1 overflow-y-auto py-3 space-y-2">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-brand-amazonDark text-gray-300 text-xs mt-16 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-gray-800">
+        
+        <div class="space-y-2.5">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded bg-brand-amber text-slate-950 font-black flex items-center justify-center text-sm">H</div>
+            <span class="font-black text-white text-sm">Shri L. G. Haria School</span>
+          </div>
+          <p class="text-gray-400 text-[11px] leading-relaxed">
+            "Youth Shall Reshape The World" — Official Student E-Commerce & AI Merchandise Platform, Jamnagar, Gujarat.
+          </p>
+          <div class="text-amber-400 font-bold text-[10px]">Hour of AI Competition Edition 2026</div>
+        </div>
+
+        <div>
+          <h5 class="text-white font-bold text-xs uppercase tracking-wider mb-2.5">Student Support & FAQs</h5>
+          <ul class="space-y-1.5 text-[11px] text-gray-400">
+            <li>🏫 Room 102 (Haria Store Desk)</li>
+            <li>🕒 Mon-Sat: Recess & 2:30 PM - 3:30 PM</li>
+            <li>💳 0% No Cost EMI on Kits > ₹500</li>
+            <li>✉️ store@haria-school.edu.in</li>
+            <li>📞 Jamnagar Campus: +91 (0288) 255-HARIA</li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="text-white font-bold text-xs uppercase tracking-wider mb-2.5">Merchandise Categories</h5>
+          <ul class="space-y-1.5 text-[11px] text-gray-400">
+            <li><a href="#" onclick="setCategory('T-shirts')" class="hover:text-white">House Pride Cotton Tees</a></li>
+            <li><a href="#" onclick="setCategory('Hoodies')" class="hover:text-white">Heavyweight Winter Fleece Hoodies</a></li>
+            <li><a href="#" onclick="setCategory('School bags')" class="hover:text-white">Ergonomic Multi-Pocket Bags</a></li>
+            <li><a href="#" onclick="setCategory('Caps')" class="hover:text-white">Falcons Sports Snapback Caps</a></li>
+            <li><a href="#" onclick="setCategory('Stationery')" class="hover:text-white">Academic Kits & Geometry Sets</a></li>
+            <li><a href="#" onclick="setCategory('Water bottles')" class="hover:text-white">Stainless 750ml Sippers</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="text-white font-bold text-xs uppercase tracking-wider mb-2.5">Available Student Coupons</h5>
+          <div class="p-3 bg-gray-900 border border-gray-700 rounded-xl space-y-2">
+            <div class="flex justify-between items-center text-[11px]">
+              <span class="font-mono text-emerald-400 font-black">HARIA10</span>
+              <span class="text-gray-400">10% Student Concession</span>
+            </div>
+            <div class="flex justify-between items-center text-[11px]">
+              <span class="font-mono text-amber-400 font-black">STUDENT20</span>
+              <span class="text-gray-400">20% Off above ₹800</span>
+            </div>
+            <div class="flex justify-between items-center text-[11px]">
+              <span class="font-mono text-cyan-400 font-black">FREESHIP</span>
+              <span class="text-gray-400">Zero Delivery Fee</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-gray-500 text-[11px] gap-2">
+        <div>© 2026 Shri L. G. Haria School, Jamnagar. Powered by AI Vibe Coding.</div>
+        <div class="flex items-center gap-3">
+          <span>Amazon-Flipkart Hybrid Engine</span>
+          <span>•</span>
+          <span>UPI / 0% EMI Supported</span>
+          <span>•</span>
+          <span>SSL 256-Bit Encrypted</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Product Catalog Database matching every category from the challenge requirements
+    const PRODUCTS = [
+      {
+        id: 1,
+        title: "Official Haria House Cotton Tee (Embroidered Crest)",
+        category: "T-shirts",
+        price: 399,
+        mrp: 599,
+        discount: 33,
+        rating: 4.8,
+        ratingCount: "1,240",
+        assured: true,
+        tag: "Bestseller",
+        stockLeft: 7,
+        image: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=700&q=80",
+        description: "100% breathable organic cotton certified for house sports and classroom activities. Anti-fade school emblem embroidery."
+      },
+      {
+        id: 2,
+        title: "Winter Crest Heavyweight Fleece Hoodie",
+        category: "Hoodies",
+        price: 899,
+        mrp: 1399,
+        discount: 36,
+        rating: 4.9,
+        ratingCount: "890",
+        assured: true,
+        tag: "Winter Essential",
+        stockLeft: 4,
+        image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=700&q=80",
+        description: "Official 360 GSM brushed fleece hoodie approved for winter uniform wear. Features kangaroo pocket and high-density motto print."
+      },
+      {
+        id: 3,
+        title: "Ergonomic Multi-Pocket School Backpack (32L Waterproof)",
+        category: "School bags",
+        price: 799,
+        mrp: 1299,
+        discount: 38,
+        rating: 4.7,
+        ratingCount: "640",
+        assured: true,
+        tag: "Heavy Duty",
+        stockLeft: 9,
+        image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=700&q=80",
+        description: "Waterproof fabric with orthopaedic spine-contour padding, dedicated laptop/tablet sleeve, and reflective nighttime safety strips."
+      },
+      {
+        id: 4,
+        title: "Haria Falcons Sports Snapback Cap",
+        category: "Caps",
+        price: 249,
+        mrp: 399,
+        discount: 38,
+        rating: 4.6,
+        ratingCount: "320",
+        assured: false,
+        tag: "Sports Team",
+        stockLeft: 12,
+        image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=700&q=80",
+        description: "Breathable cotton canvas with 3D Haria Falcon crest embroidery and moisture-absorbing internal sweatband."
+      },
+      {
+        id: 5,
+        title: "Student Academic Stationery Mega Pack (Complete Kit)",
+        category: "Stationery",
+        price: 199,
+        mrp: 349,
+        discount: 43,
+        rating: 4.9,
+        ratingCount: "1,520",
+        assured: true,
+        tag: "Top Value",
+        stockLeft: 22,
+        image: "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?auto=format&fit=crop&w=700&q=80",
+        description: "Includes 4 custom Haria ruled notebooks, full geometry instruments box, precision compass, gel pen set, and school ruler."
+      },
+      {
+        id: 6,
+        title: "Insulated Stainless Steel Sipper Bottle (750ml, BPA-Free)",
+        category: "Water bottles",
+        price: 349,
+        mrp: 599,
+        discount: 42,
+        rating: 4.8,
+        ratingCount: "780",
+        assured: true,
+        tag: "Campus Classic",
+        stockLeft: 15,
+        image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=700&q=80",
+        description: "Dual-wall vacuum insulation keeps cold beverages iced for 18 hours during Jamnagar summers. 100% leakproof lock."
+      },
+      {
+        id: 7,
+        title: "Haria House Lanyard & Heavy-Duty RFID Card Holder",
+        category: "ID-card accessories",
+        price: 99,
+        mrp: 199,
+        discount: 50,
+        rating: 4.7,
+        ratingCount: "2,100",
+        assured: true,
+        tag: "Must-Have",
+        stockLeft: 40,
+        image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=700&q=80",
+        description: "Break-away safety buckle with high-density woven lanyard and crystal-clear polycarbonate ID card protection case."
+      },
+      {
+        id: 8,
+        title: "Inter-House Athletic Dry-Fit Tournament Jersey",
+        category: "T-shirts",
+        price: 449,
+        mrp: 699,
+        discount: 35,
+        rating: 4.9,
+        ratingCount: "430",
+        assured: true,
+        tag: "Tournament Pro",
+        stockLeft: 5,
+        image: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=700&q=80",
+        description: "Engineered breathable micro-mesh jersey for school sports day, inter-house football, and cricket matches."
+      }
+    ];
+
+    // Global State
+    let cart = [];
+    let wishlist = [];
+    let activeCategory = 'all';
+    let searchQuery = '';
+    let currentSort = 'featured';
+    let activeCoupon = null;
+    let selectedModalProduct = null;
+    let modalSelectedSize = 'M';
+    let modalSelectedQty = 1;
+    let checkoutFulfillment = 'pickup';
+    let activeCheckoutItem = null; // Used when "Buy Now" is clicked directly
+
+    // AI Config
+    let aiConfig = {
+      grade: 'middle',
+      house: 'Falcons (Red)',
+      size: 'M'
+    };
+
+    // Initialize products grid
+    function renderProductGrid() {
+      const grid = document.getElementById('productGrid');
+      const counter = document.getElementById('productResultsCount');
+      const noResults = document.getElementById('noResultsState');
+
+      let filtered = PRODUCTS.filter(p => {
+        const matchesCategory = (activeCategory === 'all') || (p.category === activeCategory);
+        const matchesSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                              p.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                              p.description.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchesCategory && matchesSearch;
+      });
+
+      // Sorting
+      if (currentSort === 'price-asc') {
+        filtered.sort((a, b) => a.price - b.price);
+      } else if (currentSort === 'price-desc') {
+        filtered.sort((a, b) => b.price - a.price);
+      } else if (currentSort === 'discount') {
+        filtered.sort((a, b) => b.discount - a.discount);
+      } else if (currentSort === 'rating') {
+        filtered.sort((a, b) => b.rating - a.rating);
+      }
+
+      counter.textContent = `${filtered.length} items found`;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '';
+        noResults.classList.remove('hidden');
+        return;
+      }
+
+      noResults.classList.add('hidden');
+
+      grid.innerHTML = filtered.map(item => {
+        const isWishlisted = wishlist.includes(item.id);
+        const emiPerMonth = Math.round(item.price / 6);
+
+        return `
+          <div class="bg-white rounded-xl border border-gray-200 overflow-hidden flex flex-col justify-between hover:shadow-xl transition-all duration-200 group relative">
+            
+            <!-- Wishlist Heart Button -->
+            <button onclick="toggleWishlist(${item.id})" class="absolute top-2.5 right-2.5 z-10 w-8 h-8 rounded-full bg-white/90 shadow-sm flex items-center justify-center text-gray-400 hover:text-rose-500 transition-colors">
+              <svg class="w-4 h-4 ${isWishlisted ? 'fill-rose-500 text-rose-500' : 'fill-none'}" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+            </button>
+
+            <!-- Product Image Thumbnail -->
+            <div class="relative bg-gray-50 aspect-square overflow-hidden cursor-pointer" onclick="openQuickViewModal(${item.id})">
+              <img 
+                src="${item.image}" 
+                alt="${item.title}" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                onerror="this.src='https://placehold.co/500x500/0f172a/ffffff?text=${encodeURIComponent(item.title)}'"
+              >
+              
+              <!-- Badges -->
+              <div class="absolute top-2.5 left-2.5 flex flex-col gap-1">
+                <span class="bg-brand-amazonDark text-amber-300 text-[10px] font-black px-2 py-0.5 rounded shadow-sm uppercase tracking-wide">
+                  ${item.tag}
+                </span>
+                ${item.assured ? `<span class="bg-brand-flipkartBlue text-white text-[9px] font-black px-1.5 py-0.5 rounded w-fit italic">HARIA ASSURED</span>` : ''}
+              </div>
+
+              <!-- Stock Urgency -->
+              <span class="absolute bottom-2 left-2 bg-red-600/90 text-white text-[10px] font-bold px-2 py-0.5 rounded">
+                Only ${item.stockLeft} left
+              </span>
+            </div>
+
+            <!-- Content Area -->
+            <div class="p-3.5 flex-1 flex flex-col justify-between">
+              <div>
+                <span class="text-[10px] font-extrabold uppercase text-gray-500 tracking-wider">${item.category}</span>
+                <h3 onclick="openQuickViewModal(${item.id})" class="font-bold text-xs sm:text-sm text-gray-900 mt-0.5 leading-snug line-clamp-2 hover:text-brand-flipkartBlue cursor-pointer transition-colors">
+                  ${item.title}
+                </h3>
+
+                <!-- Rating -->
+                <div class="flex items-center gap-1.5 mt-1">
+                  <div class="bg-emerald-700 text-white text-[10px] font-black px-1.5 py-0.5 rounded flex items-center gap-0.5">
+                    <span>${item.rating}</span> ★
+                  </div>
+                  <span class="text-[11px] text-gray-400">(${item.ratingCount})</span>
+                </div>
+              </div>
+
+              <div class="mt-3 pt-2.5 border-t border-gray-100">
+                <!-- Pricing Structure -->
+                <div class="flex items-baseline gap-2">
+                  <span class="text-base font-black text-slate-900">₹${item.price}</span>
+                  <span class="text-xs text-gray-400 line-through">₹${item.mrp}</span>
+                  <span class="text-[11px] font-black text-emerald-700">${item.discount}% off</span>
+                </div>
+
+                <!-- No Cost EMI Teaser -->
+                <div class="text-[10px] text-amber-800 font-bold bg-amber-50 px-1.5 py-0.5 rounded mt-1 w-fit">
+                  No Cost EMI from ₹${emiPerMonth}/mo
+                </div>
+
+                <!-- Flipkart/Amazon Dual Action Buttons -->
+                <div class="grid grid-cols-2 gap-1.5 mt-3">
+                  <button onclick="quickAddToCart(${item.id})" class="w-full py-2 bg-brand-amber hover:bg-amber-500 text-slate-950 font-black text-xs rounded transition-colors flex items-center justify-center gap-1 shadow-2xs">
+                    <span>+ Cart</span>
+                  </button>
+                  <button onclick="directBuyNow(${item.id})" class="w-full py-2 bg-brand-flipkartBlue hover:bg-blue-700 text-white font-black text-xs rounded transition-colors flex items-center justify-center gap-1 shadow-2xs">
+                    <span>Buy Now</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Category Handling
+    function setCategory(cat) {
+      activeCategory = cat;
+      const badge = document.getElementById('activeFilterBadge');
+      badge.textContent = cat === 'all' ? 'All Items' : cat;
+
+      const headerSelect = document.getElementById('headerCategorySelect');
+      if (headerSelect) headerSelect.value = cat;
+
+      renderProductGrid();
+    }
+
+    function handleHeaderCategoryChange(cat) {
+      setCategory(cat);
+    }
+
+    function handleSearch(term) {
+      searchQuery = term.trim();
+      renderProductGrid();
+    }
+
+    function applySort(type) {
+      currentSort = type;
+      document.querySelectorAll('.sort-chip').forEach(c => {
+        c.className = "sort-chip px-2.5 py-1 bg-gray-100 text-gray-700 hover:bg-gray-200 rounded";
+      });
+      const activeBtn = document.getElementById(`sort-${type}`);
+      if (activeBtn) activeBtn.className = "sort-chip px-2.5 py-1 bg-brand-flipkartBlue text-white rounded";
+      renderProductGrid();
+    }
+
+    // Wishlist Toggle
+    function toggleWishlist(id) {
+      const idx = wishlist.indexOf(id);
+      if (idx > -1) {
+        wishlist.splice(idx, 1);
+      } else {
+        wishlist.push(id);
+      }
+      document.getElementById('wishlistCount').textContent = wishlist.length;
+      renderProductGrid();
+      renderWishlistModal();
+    }
+
+    function openWishlistModal() {
+      renderWishlistModal();
+      document.getElementById('wishlistModal').classList.remove('hidden');
+    }
+
+    function closeWishlistModal() {
+      document.getElementById('wishlistModal').classList.add('hidden');
+    }
+
+    function renderWishlistModal() {
+      const container = document.getElementById('wishlistContainer');
+      if (wishlist.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-8 text-gray-400 text-xs">
+            <p class="text-2xl mb-1">💔</p>
+            Your wishlist is empty. Tap the heart on products to save them!
+          </div>
+        `;
+        return;
+      }
+
+      const items = PRODUCTS.filter(p => wishlist.includes(p.id));
+      container.innerHTML = items.map(p => `
+        <div class="flex items-center justify-between p-2.5 bg-gray-50 border border-gray-200 rounded-lg">
+          <div class="flex items-center gap-2.5">
+            <img src="${p.image}" class="w-10 h-10 object-cover rounded">
+            <div>
+              <div class="font-bold text-xs text-gray-800 truncate max-w-[170px]">${p.title}</div>
+              <div class="text-xs font-black text-emerald-700">₹${p.price}</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <button onclick="quickAddToCart(${p.id}); toggleWishlist(${p.id});" class="px-2.5 py-1 bg-brand-amber text-slate-950 font-bold text-[11px] rounded">Move to Cart</button>
+            <button onclick="toggleWishlist(${p.id})" class="text-gray-400 hover:text-red-500 text-xs font-bold px-1">✕</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Quick View Modal
+    function openQuickViewModal(id) {
+      const p = PRODUCTS.find(x => x.id === id);
+      if (!p) return;
+
+      selectedModalProduct = p;
+      modalSelectedQty = 1;
+      modalSelectedSize = 'M';
+
+      document.getElementById('modalProductImg').src = p.image;
+      document.getElementById('modalCategoryTag').textContent = p.category;
+      document.getElementById('modalProductTitle').textContent = p.title;
+      document.getElementById('modalRating').textContent = p.rating;
+      document.getElementById('modalRatingsCount').textContent = `${p.ratingCount} ratings & student reviews`;
+      document.getElementById('modalCurrentPrice').textContent = `₹${p.price}`;
+      document.getElementById('modalMrpPrice').textContent = `₹${p.mrp}`;
+      document.getElementById('modalDiscountTag').textContent = `${p.discount}% OFF`;
+      document.getElementById('modalDescription').textContent = p.description;
+      document.getElementById('modalEmiRate').textContent = `₹${Math.round(p.price / 6)}/mo`;
+      document.getElementById('modalQuantityDisplay').textContent = modalSelectedQty;
+
+      // Show apparel size section only for T-shirts & Hoodies
+      const sizeSection = document.getElementById('modalSizeSection');
+      if (p.category === 'T-shirts' || p.category === 'Hoodies') {
+        sizeSection.classList.remove('hidden');
+        setModalSize('M');
+      } else {
+        sizeSection.classList.add('hidden');
+      }
+
+      document.getElementById('quickViewModal').classList.remove('hidden');
+    }
+
+    function closeQuickView() {
+      document.getElementById('quickViewModal').classList.add('hidden');
+    }
+
+    function setModalSize(sz) {
+      modalSelectedSize = sz;
+      document.querySelectorAll('.size-pill').forEach(btn => {
+        if (btn.textContent.trim() === sz) {
+          btn.className = "size-pill px-3 py-1.5 text-xs font-bold border-2 border-brand-flipkartBlue bg-blue-50 text-brand-flipkartBlue rounded";
+        } else {
+          btn.className = "size-pill px-3 py-1.5 text-xs font-bold border border-gray-300 rounded hover:border-black";
+        }
+      });
+    }
+
+    function alterModalQty(delta) {
+      modalSelectedQty = Math.max(1, modalSelectedQty + delta);
+      document.getElementById('modalQuantityDisplay').textContent = modalSelectedQty;
+    }
+
+    function verifyPincode() {
+      const pin = document.getElementById('checkPinInput').value.trim();
+      const res = document.getElementById('pincodeResultText');
+      if (pin.length === 6) {
+        res.textContent = `✓ Delivery verified for PIN ${pin}: Instant Pickup at Room 102 or Doorstep delivery in 48 hrs!`;
+        res.className = "text-[11px] text-emerald-700 font-bold mt-1.5";
+      } else {
+        res.textContent = "✕ Please enter a valid 6-digit Indian PIN code.";
+        res.className = "text-[11px] text-red-600 font-bold mt-1.5";
+      }
+    }
+
+    function addModalItemToCart() {
+      if (selectedModalProduct) {
+        addItemToCart(selectedModalProduct, modalSelectedQty, modalSelectedSize);
+        closeQuickView();
+        toggleCartDrawer(true);
+      }
+    }
+
+    function buyNowFromModal() {
+      if (selectedModalProduct) {
+        activeCheckoutItem = {
+          product: selectedModalProduct,
+          quantity: modalSelectedQty,
+          size: modalSelectedSize
+        };
+        closeQuickView();
+        openCheckoutModal('direct');
+      }
+    }
+
+    function directBuyNow(id) {
+      const p = PRODUCTS.find(x => x.id === id);
+      if (p) {
+        activeCheckoutItem = {
+          product: p,
+          quantity: 1,
+          size: 'M'
+        };
+        openCheckoutModal('direct');
+      }
+    }
+
+    // Cart Core Functions
+    function quickAddToCart(id) {
+      const p = PRODUCTS.find(x => x.id === id);
+      if (p) {
+        addItemToCart(p, 1, 'M');
+        toggleCartDrawer(true);
+      }
+    }
+
+    function addItemToCart(product, quantity = 1, size = 'M') {
+      const existingIdx = cart.findIndex(c => c.id === product.id && c.size === size);
+      if (existingIdx > -1) {
+        cart[existingIdx].quantity += quantity;
+      } else {
+        cart.push({
+          id: product.id,
+          title: product.title,
+          price: product.price,
+          mrp: product.mrp,
+          category: product.category,
+          image: product.image,
+          size: (product.category === 'T-shirts' || product.category === 'Hoodies') ? size : null,
+          quantity: quantity
+        });
+      }
+      updateCartState();
+    }
+
+    function alterCartQty(idx, delta) {
+      if (cart[idx]) {
+        cart[idx].quantity += delta;
+        if (cart[idx].quantity <= 0) {
+          cart.splice(idx, 1);
+        }
+      }
+      updateCartState();
+    }
+
+    function removeCartItem(idx) {
+      cart.splice(idx, 1);
+      updateCartState();
+    }
+
+    function toggleCartDrawer(open) {
+      const drawer = document.getElementById('cartDrawer');
+      const backdrop = document.getElementById('cartBackdrop');
+      if (open) {
+        backdrop.classList.remove('hidden');
+        drawer.classList.remove('drawer-closed');
+        drawer.classList.add('drawer-open');
+      } else {
+        drawer.classList.remove('drawer-open');
+        drawer.classList.add('drawer-closed');
+        backdrop.classList.add('hidden');
+      }
+    }
+
+    function updateCartState() {
+      const list = document.getElementById('cartItemsList');
+      const emptyView = document.getElementById('emptyCartView');
+      const footer = document.getElementById('cartFooter');
+      const badge = document.getElementById('cartCountBadge');
+      const drawerBadge = document.getElementById('drawerBadge');
+      const headerCartTotal = document.getElementById('headerCartTotal');
+
+      const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
+      badge.textContent = totalItems;
+      drawerBadge.textContent = totalItems;
+
+      if (cart.length === 0) {
+        list.classList.add('hidden');
+        footer.classList.add('hidden');
+        emptyView.classList.remove('hidden');
+        headerCartTotal.textContent = "₹0";
+        updateShippingProgressBar(0);
+        return;
+      }
+
+      emptyView.classList.add('hidden');
+      list.classList.remove('hidden');
+      footer.classList.remove('hidden');
+
+      // Populate list
+      list.innerHTML = cart.map((item, idx) => `
+        <div class="py-3 flex items-start gap-3">
+          <img src="${item.image}" class="w-14 h-14 object-cover rounded-lg border border-gray-200 shrink-0">
+          <div class="flex-1 min-w-0">
+            <h5 class="font-bold text-xs text-gray-900 truncate">${item.title}</h5>
+            <div class="flex items-center gap-2 mt-1">
+              ${item.size ? `<span class="text-[10px] bg-gray-100 font-bold px-1.5 py-0.5 rounded text-gray-700">Size: ${item.size}</span>` : ''}
+              <span class="text-xs font-black text-slate-900">₹${item.price}</span>
+              <span class="text-[10px] text-gray-400 line-through">₹${item.mrp}</span>
+            </div>
+
+            <div class="flex items-center justify-between mt-2">
+              <div class="flex items-center border border-gray-300 rounded">
+                <button onclick="alterCartQty(${idx}, -1)" class="px-2 py-0.5 text-xs font-black text-gray-700 hover:bg-gray-100">-</button>
+                <span class="px-2 text-xs font-bold">${item.quantity}</span>
+                <button onclick="alterCartQty(${idx}, 1)" class="px-2 py-0.5 text-xs font-black text-gray-700 hover:bg-gray-100">+</button>
+              </div>
+              <button onclick="removeCartItem(${idx})" class="text-[11px] text-red-600 hover:underline font-bold">Remove</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      // Totals
+      const mrpTotal = cart.reduce((acc, i) => acc + (i.mrp * i.quantity), 0);
+      const subtotal = cart.reduce((acc, i) => acc + (i.price * i.quantity), 0);
+      
+      let discount = 0;
+      if (activeCoupon === 'HARIA10') {
+        discount = Math.round(subtotal * 0.10);
+      } else if (activeCoupon === 'STUDENT20' && subtotal >= 800) {
+        discount = Math.round(subtotal * 0.20);
+      } else if (activeCoupon === 'FREESHIP') {
+        discount = 40; // Delivery waiver
+      }
+
+      const finalAmount = Math.max(0, subtotal - discount);
+
+      document.getElementById('cartMrpTotal').textContent = `₹${mrpTotal}`;
+      document.getElementById('cartSubtotal').textContent = `₹${subtotal}`;
+      headerCartTotal.textContent = `₹${finalAmount}`;
+      document.getElementById('cartFinalAmount').textContent = `₹${finalAmount}`;
+
+      const discountRow = document.getElementById('cartDiscountRow');
+      if (discount > 0) {
+        discountRow.classList.remove('hidden');
+        document.getElementById('cartDiscountVal').textContent = `-₹${discount}`;
+      } else {
+        discountRow.classList.add('hidden');
+      }
+
+      // EMI teaser
+      const emiVal = Math.round(finalAmount / 6);
+      document.getElementById('cartEmiTeaser').textContent = `From ₹${emiVal}/mo`;
+
+      updateShippingProgressBar(subtotal);
+    }
+
+    function updateShippingProgressBar(subtotal) {
+      const bar = document.getElementById('freeShippingBar');
+      const banner = document.getElementById('freeShippingBanner');
+      const pctLabel = document.getElementById('freeShippingPercent');
+      const target = 500;
+
+      if (subtotal >= target) {
+        bar.style.width = '100%';
+        banner.innerHTML = '🎉 You unlocked <strong>FREE Home Delivery</strong> in Jamnagar!';
+        pctLabel.textContent = '100%';
+      } else {
+        const diff = target - subtotal;
+        const pct = Math.min(100, Math.round((subtotal / target) * 100));
+        bar.style.width = `${pct}%`;
+        banner.innerHTML = `Add items worth <strong>₹${diff}</strong> for Free Home Delivery!`;
+        pctLabel.textContent = `${pct}%`;
+      }
+    }
+
+    // Coupon logic
+    function applyCouponCode(code) {
+      activeCoupon = code;
+      const msg = document.getElementById('couponStatusMessage');
+      msg.classList.remove('hidden');
+      msg.className = "text-[11px] font-bold text-emerald-700";
+      msg.textContent = `✓ Voucher '${code}' applied successfully!`;
+      updateCartState();
+    }
+
+    function applyManualCoupon() {
+      const code = document.getElementById('customCouponInput').value.trim().toUpperCase();
+      const msg = document.getElementById('couponStatusMessage');
+      if (code === 'HARIA10' || code === 'STUDENT20' || code === 'FREESHIP') {
+        applyCouponCode(code);
+      } else {
+        msg.classList.remove('hidden');
+        msg.className = "text-[11px] font-bold text-red-600";
+        msg.textContent = "✕ Invalid voucher. Try HARIA10, STUDENT20, or FREESHIP.";
+      }
+    }
+
+    // Checkout Flow
+    function openCheckoutModal(source) {
+      let totalToPay = 0;
+      if (source === 'direct' && activeCheckoutItem) {
+        totalToPay = activeCheckoutItem.product.price * activeCheckoutItem.quantity;
+      } else {
+        activeCheckoutItem = null;
+        totalToPay = cart.reduce((acc, i) => acc + (i.price * i.quantity), 0);
+      }
+
+      if (totalToPay === 0) return;
+
+      document.getElementById('checkoutPayableAmount').textContent = `₹${totalToPay}`;
+      document.getElementById('chkEmi3Cost').textContent = `₹${Math.round(totalToPay / 3)}/mo`;
+      document.getElementById('chkEmi6Cost').textContent = `₹${Math.round(totalToPay / 6)}/mo`;
+
+      toggleCartDrawer(false);
+      document.getElementById('checkoutModal').classList.remove('hidden');
+    }
+
+    function closeCheckoutModal() {
+      document.getElementById('checkoutModal').classList.add('hidden');
+    }
+
+    function toggleFulfillmentType(mode) {
+      checkoutFulfillment = mode;
+      const addrBox = document.getElementById('homeAddressField');
+      if (mode === 'home') {
+        addrBox.classList.remove('hidden');
+      } else {
+        addrBox.classList.add('hidden');
+      }
+    }
+
+    function setCheckoutPaymentTab(tab) {
+      ['chkTabUpi', 'chkTabEmi', 'chkTabCard', 'chkTabCod'].forEach(t => {
+        document.getElementById(t).className = "py-2 border border-gray-300 text-gray-700 font-bold rounded text-center hover:bg-gray-50";
+      });
+      ['chkPanelUpi', 'chkPanelEmi', 'chkPanelCard', 'chkPanelCod'].forEach(p => {
+        document.getElementById(p).classList.add('hidden');
+      });
+
+      if (tab === 'upi') {
+        document.getElementById('chkTabUpi').className = "py-2 border-2 border-brand-flipkartBlue bg-blue-50 text-brand-flipkartBlue font-bold rounded text-center";
+        document.getElementById('chkPanelUpi').classList.remove('hidden');
+      } else if (tab === 'emi') {
+        document.getElementById('chkTabEmi').className = "py-2 border-2 border-brand-amber bg-amber-50 text-amber-900 font-bold rounded text-center";
+        document.getElementById('chkPanelEmi').classList.remove('hidden');
+      } else if (tab === 'card') {
+        document.getElementById('chkTabCard').className = "py-2 border-2 border-slate-900 bg-gray-100 text-slate-900 font-bold rounded text-center";
+        document.getElementById('chkPanelCard').classList.remove('hidden');
+      } else if (tab === 'cod') {
+        document.getElementById('chkTabCod').className = "py-2 border-2 border-emerald-600 bg-emerald-50 text-emerald-800 font-bold rounded text-center";
+        document.getElementById('chkPanelCod').classList.remove('hidden');
+      }
+    }
+
+    function handleFinalOrderSubmit(e) {
+      e.preventDefault();
+      const rand = Math.floor(1000 + Math.random() * 9000);
+      const orderId = `#SLGH-2026-${rand}`;
+
+      const name = document.getElementById('custName').value;
+      const roll = document.getElementById('custRoll').value;
+      const total = document.getElementById('checkoutPayableAmount').textContent;
+
+      document.getElementById('receiptOrderId').textContent = orderId;
+      document.getElementById('receiptStudentInfo').textContent = `${name} (${roll})`;
+      document.getElementById('receiptFulfillment').textContent = checkoutFulfillment === 'pickup' 
+        ? "🏫 Haria Desk Room 102 Pickup" 
+        : "🚚 Jamnagar Doorstep Delivery";
+      document.getElementById('receiptPayment').textContent = "Verified / Booked with Student Roll";
+      document.getElementById('receiptTotal').textContent = total;
+
+      // Reset
+      cart = [];
+      activeCoupon = null;
+      updateCartState();
+
+      closeCheckoutModal();
+      document.getElementById('orderSuccessModal').classList.remove('hidden');
+    }
+
+    function dismissReceiptModal() {
+      document.getElementById('orderSuccessModal').classList.add('hidden');
+    }
+
+    // Modal Size Chart & EMI helpers
+    function openSizeChartModal() {
+      document.getElementById('sizeChartModal').classList.remove('hidden');
+    }
+    function closeSizeChartModal() {
+      document.getElementById('sizeChartModal').classList.add('hidden');
+    }
+    function openEmiBreakdownModal() {
+      document.getElementById('emiBreakdownModal').classList.remove('hidden');
+    }
+    function closeEmiModal() {
+      document.getElementById('emiBreakdownModal').classList.add('hidden');
+    }
+
+    // AI Sizing & Starter Kit Advisor
+    function openAiModal() {
+      document.getElementById('aiWizardQuestions').classList.remove('hidden');
+      document.getElementById('aiWizardResult').classList.add('hidden');
+      document.getElementById('aiRecommenderModal').classList.remove('hidden');
+    }
+
+    function closeAiModal() {
+      document.getElementById('aiRecommenderModal').classList.add('hidden');
+    }
+
+    function selectAiOption(category, val) {
+      aiConfig[category] = val;
+      if (category === 'grade') {
+        document.querySelectorAll('.ai-opt-grade').forEach(btn => {
+          if (btn.textContent.toLowerCase().includes(val)) {
+            btn.className = "ai-opt-grade py-2 px-2 border-2 border-brand-emerald bg-emerald-50 text-emerald-800 font-bold rounded text-center";
+          } else {
+            btn.className = "ai-opt-grade py-2 px-2 border border-gray-300 rounded font-semibold hover:border-brand-emerald text-center";
+          }
+        });
+      } else if (category === 'house') {
+        document.querySelectorAll('.ai-opt-house').forEach(btn => {
+          if (btn.textContent.includes(val.split(' ')[0])) {
+            btn.className = "ai-opt-house py-2 border-2 border-emerald-500 bg-emerald-50 font-bold rounded text-center";
+          } else {
+            btn.className = "ai-opt-house py-2 border border-gray-300 font-bold rounded text-center";
+          }
+        });
+      }
+    }
+
+    function computeAiRecommendation() {
+      aiConfig.size = document.getElementById('aiHeightFit').value;
+
+      document.getElementById('aiWizardQuestions').classList.add('hidden');
+      document.getElementById('aiWizardResult').classList.remove('hidden');
+
+      const tee = PRODUCTS.find(p => p.id === 1);
+      const bottle = PRODUCTS.find(p => p.id === 6);
+      const badge = PRODUCTS.find(p => p.id === 7);
+
+      const items = [tee, bottle, badge];
+      const sum = items.reduce((acc, x) => acc + x.price, 0);
+      const discountedKit = Math.round(sum * 0.85);
+
+      document.getElementById('aiSummaryReasoning').textContent = 
+        `Personalized for ${aiConfig.grade.toUpperCase()} scholar in ${aiConfig.house}. Sizing calculated at '${aiConfig.size}'. Includes official House tee, hydration flask, and badge!`;
+
+      document.getElementById('aiKitPriceDisplay').innerHTML = `₹${discountedKit} <span class="line-through text-gray-400 text-xs font-normal">₹${sum}</span>`;
+
+      const listDiv = document.getElementById('aiBundleProductsList');
+      listDiv.innerHTML = items.map(it => `
+        <div class="flex items-center justify-between p-2 bg-gray-50 border border-gray-200 rounded-lg">
+          <div class="flex items-center gap-2">
+            <img src="${it.image}" class="w-8 h-8 object-cover rounded">
+            <div>
+              <div class="font-bold text-gray-900">${it.title}</div>
+              <div class="text-[10px] text-gray-500">${it.category} ${it.category === 'T-shirts' ? `• Size: ${aiConfig.size}` : ''}</div>
+            </div>
+          </div>
+          <span class="font-black text-slate-900">₹${it.price}</span>
+        </div>
+      `).join('');
+
+      window.generatedAiKit = { items, size: aiConfig.size };
+    }
+
+    function resetAiWizard() {
+      document.getElementById('aiWizardResult').classList.add('hidden');
+      document.getElementById('aiWizardQuestions').classList.remove('hidden');
+    }
+
+    function addAiBundleToCart() {
+      if (window.generatedAiKit && window.generatedAiKit.items) {
+        window.generatedAiKit.items.forEach(it => {
+          addItemToCart(it, 1, window.generatedAiKit.size || 'M');
+        });
+        closeAiModal();
+        toggleCartDrawer(true);
+      }
+    }
+
+    function addBundleComboToCart() {
+      const tee = PRODUCTS.find(p => p.id === 1);
+      const bottle = PRODUCTS.find(p => p.id === 6);
+      const badge = PRODUCTS.find(p => p.id === 7);
+
+      addItemToCart(tee, 1, 'M');
+      addItemToCart(bottle, 1, 'M');
+      addItemToCart(badge, 1, 'M');
+      toggleCartDrawer(true);
+    }
+
+    // Chatbot functionality
+    function toggleChatBot() {
+      document.getElementById('chatBotWindow').classList.toggle('hidden');
+    }
+
+    function sendBotPrompt(text) {
+      appendChatMessage('user', text);
+      setTimeout(() => respondBot(text), 400);
+    }
+
+    function handleChatSubmit(e) {
+      e.preventDefault();
+      const inp = document.getElementById('chatInputBox');
+      const val = inp.value.trim();
+      if (!val) return;
+      appendChatMessage('user', val);
+      inp.value = '';
+      setTimeout(() => respondBot(val), 500);
+    }
+
+    function appendChatMessage(sender, msg) {
+      const stream = document.getElementById('chatMessageStream');
+      const el = document.createElement('div');
+      el.className = sender === 'user' ? "flex items-start justify-end" : "flex items-start gap-2";
+
+      if (sender === 'user') {
+        el.innerHTML = `<div class="bg-brand-flipkartBlue text-white p-2.5 rounded-xl rounded-tr-none shadow-xs max-w-[80%]">${msg}</div>`;
+      } else {
+        el.innerHTML = `
+          <div class="w-6 h-6 rounded-full bg-brand-amber text-slate-950 font-black flex items-center justify-center text-[10px] shrink-0">AI</div>
+          <div class="bg-white p-2.5 rounded-xl rounded-tl-none border border-gray-200 text-gray-800 leading-relaxed shadow-xs max-w-[85%]">${msg}</div>
+        `;
+      }
+      stream.appendChild(el);
+      stream.scrollTop = stream.scrollHeight;
+    }
+
+    function respondBot(query) {
+      const q = query.toLowerCase();
+      let ans = "I am here to help you shop official Shri L. G. Haria School merchandise! Ask me about size charts, discounts, or EMI.";
+
+      if (q.includes('300') || q.includes('under') || q.includes('cheap')) {
+        ans = "Budget items under ₹300 include our <strong>Haria Falcons Sports Cap (₹249)</strong>, <strong>Academic Stationery Kit (₹199)</strong>, and <strong>House Lanyard Badge (₹99)</strong>!";
+      } else if (q.includes('emi') || q.includes('cost') || q.includes('install')) {
+        ans = "We offer <strong>0% No Cost EMI</strong> across 3 and 6 month tenures via all major credit cards and student accounts. Plans start at just ₹67/month!";
+      } else if (q.includes('pickup') || q.includes('room') || q.includes('desk')) {
+        ans = "Merchandise pickup desk is located in <strong>Room 102 (Main Building)</strong>. You can collect your gear during recess or between 2:30 PM - 3:30 PM!";
+      } else if (q.includes('hoodie') || q.includes('winter')) {
+        ans = "The <strong>Winter Crest Heavyweight Fleece Hoodie (₹899)</strong> is 360 GSM and officially approved for winter school dress codes.";
+      }
+      appendChatMessage('ai', ans);
+    }
+
+    // Deals Timer Simulator
+    function startTimer() {
+      let totalSeconds = 2 * 3600 + 44 * 60 + 18;
+      setInterval(() => {
+        if (totalSeconds > 0) totalSeconds--;
+        const h = String(Math.floor(totalSeconds / 3600)).padStart(2, '0');
+        const m = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
+        const s = String(totalSeconds % 60).padStart(2, '0');
+        const elH = document.getElementById('countdownHours');
+        const elM = document.getElementById('countdownMins');
+        const elS = document.getElementById('countdownSecs');
+        if (elH) elH.textContent = h;
+        if (elM) elM.textContent = m;
+        if (elS) elS.textContent = s;
+      }, 1000);
+    }
+
+    function promptPincodeCheck() {
+      const pin = prompt("Enter your Jamnagar PIN code:", "361001");
+      if (pin) {
+        document.getElementById('currentDeliveryPin').textContent = `Jamnagar ${pin}`;
+      }
+    }
+
+    function triggerVoiceSearch() {
+      alert("🎙️ Haria AI Voice Search is listening... (Say 'Hoodies' or 'Bottles')");
+    }
+
+    // Startup
+    window.addEventListener('DOMContentLoaded', () => {
+      renderProductGrid();
+      startTimer();
+    });
+  </script>
+</body>
+</html>
